@@ -3,7 +3,7 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     
     <url>
-        <loc>http://www.poc275.co.uk/index.html</loc>
+        <loc>http://poc275.co.uk/index.html</loc>
         <video:video>
             <video:content_loc>
                 http://www.poc275.co.uk/vid/Intro3dDemo.mp4
@@ -11,67 +11,166 @@
             <video:title>3D Software Renderer</video:title>
             <video:description>Demonstration of my 3D Software Renderer written in C++</video:description>
         </video:video>
-        <lastmod>2014-09-21</lastmod>
+        <lastmod>2016-04-30</lastmod>
     </url>
 
     <url>
-        <loc>http://www.poc275.co.uk/complete-portfolio.html</loc>
-        <lastmod>2014-10-17</lastmod>
+        <loc>http://poc275.co.uk/complete-portfolio.html</loc>
+        <lastmod>2016-04-30</lastmod>
     </url>
 
     <url>
-        <loc>http://www.poc275.co.uk/ipc-itc-windows-api.html</loc>
-        <lastmod>2014-10-05</lastmod>
+        <loc>http://poc275.co.uk/code-master-android.html</loc>
+        <lastmod>2016-04-30</lastmod>
     </url>
 
     <url>
-        <loc>http://www.poc275.co.uk/information-tracker.html</loc>
-        <lastmod>2014-10-05</lastmod>
+        <loc>http://poc275.co.uk/ipc-itc-windows-api.html</loc>
+        <lastmod>2016-04-30</lastmod>
     </url>
 
     <url>
-        <loc>http://www.poc275.co.uk/website-redesign-report.html</loc>
-        <lastmod>2014-10-05</lastmod>
+        <loc>http://poc275.co.uk/information-tracker.html</loc>
+        <lastmod>2016-04-30</lastmod>
     </url>
 
     <url>
-        <loc>http://www.poc275.co.uk/programming-language-design.html</loc>
-        <lastmod>2014-10-08</lastmod>
+        <loc>http://poc275.co.uk/website-redesign-report.html</loc>
+        <lastmod>2016-04-30</lastmod>
     </url>
 
     <url>
-        <loc>http://www.poc275.co.uk/swimming-pool-bookings-system.html</loc>
-        <lastmod>2014-10-09</lastmod>
+        <loc>http://poc275.co.uk/programming-language-design.html</loc>
+        <lastmod>2016-04-30</lastmod>
     </url>
 
     <url>
-        <loc>http://www.poc275.co.uk/text-analyser.html</loc>
-        <lastmod>2014-10-11</lastmod>
+        <loc>http://poc275.co.uk/swimming-pool-bookings-system.html</loc>
+        <lastmod>2016-04-30</lastmod>
     </url>
 
     <url>
-        <loc>http://www.poc275.co.uk/classified-adverts-web-app.html</loc>
-        <lastmod>2014-10-12</lastmod>
+        <loc>http://poc275.co.uk/text-analyser.html</loc>
+        <lastmod>2016-04-30</lastmod>
     </url>
 
     <url>
-        <loc>http://www.poc275.co.uk/distributed-application-development.html</loc>
-        <lastmod>2014-10-14</lastmod>
+        <loc>http://poc275.co.uk/classified-adverts-web-app.html</loc>
+        <lastmod>2016-04-30</lastmod>
     </url>
 
     <url>
-        <loc>http://www.poc275.co.uk/music-collection-manager-pair-programming.html</loc>
-        <lastmod>2014-10-15</lastmod>
+        <loc>http://poc275.co.uk/distributed-application-development.html</loc>
+        <lastmod>2016-04-30</lastmod>
     </url>
 
     <url>
-        <loc>http://www.poc275.co.uk/multi-user-database-system.html</loc>
-        <lastmod>2014-10-17</lastmod>
+        <loc>http://poc275.co.uk/music-collection-manager-pair-programming.html</loc>
+        <lastmod>2016-04-30</lastmod>
     </url>
 
     <url>
-        <loc>http://www.poc275.co.uk/verb-test.php</loc>
-        <lastmod>2014-10-17</lastmod>
+        <loc>http://poc275.co.uk/multi-user-database-system.html</loc>
+        <lastmod>2016-04-30</lastmod>
+    </url>
+
+    <url>
+        <loc>http://poc275.co.uk/verb-test.php</loc>
+        <lastmod>2016-04-30</lastmod>
+    </url>
+
+
+    <!-- USA/Canada Trip -->
+    <url>
+        <loc>http://poc275.co.uk/usa-canada/usa-canada-trip.html</loc>
+        <lastmod>2014-09-11</lastmod>
+    </url>
+
+    <url>
+        <loc>http://poc275.co.uk/usa-canada/nyc.html</loc>
+        <lastmod>2014-09-11</lastmod>
+    </url>
+
+    <url>
+        <loc>http://poc275.co.uk/usa-canada/nyc-activities.html</loc>
+        <lastmod>2014-09-11</lastmod>
+    </url>
+
+    <url>
+        <loc>http://poc275.co.uk/usa-canada/nyc-places.html</loc>
+        <lastmod>2014-09-11</lastmod>
+    </url>
+
+    <url>
+        <loc>http://poc275.co.uk/usa-canada/nyc-photos.html</loc>
+        <lastmod>2014-09-11</lastmod>
+    </url>
+
+    <url>
+        <loc>http://poc275.co.uk/usa-canada/washington.html</loc>
+        <lastmod>2014-09-11</lastmod>
+    </url>
+
+    <url>
+        <loc>http://poc275.co.uk/usa-canada/washington-activities.html</loc>
+        <lastmod>2014-09-11</lastmod>
+    </url>
+
+    <url>
+        <loc>http://poc275.co.uk/usa-canada/washington-places.html</loc>
+        <lastmod>2014-09-11</lastmod>
+    </url>
+
+    <url>
+        <loc>http://poc275.co.uk/usa-canada/washington-photos.html</loc>
+        <lastmod>2014-09-11</lastmod>
+    </url>
+
+    <url>
+        <loc>http://poc275.co.uk/usa-canada/toronto.html</loc>
+        <lastmod>2014-09-11</lastmod>
+    </url>
+
+    <url>
+        <loc>http://poc275.co.uk/usa-canada/toronto-activities.html</loc>
+        <lastmod>2014-09-11</lastmod>
+    </url>
+
+    <url>
+        <loc>http://poc275.co.uk/usa-canada/toronto-places.html</loc>
+        <lastmod>2014-09-11</lastmod>
+    </url>
+
+    <url>
+        <loc>http://poc275.co.uk/usa-canada/toronto-photos.html</loc>
+        <lastmod>2014-09-11</lastmod>
+    </url>
+
+    <url>
+        <loc>http://poc275.co.uk/usa-canada/boston.html</loc>
+        <lastmod>2014-09-11</lastmod>
+    </url>
+
+    <url>
+        <loc>http://poc275.co.uk/usa-canada/boston-activities.html</loc>
+        <lastmod>2014-09-11</lastmod>
+    </url>
+
+    <url>
+        <loc>http://poc275.co.uk/usa-canada/boston-places.html</loc>
+        <lastmod>2014-09-11</lastmod>
+    </url>
+
+    <url>
+        <loc>http://poc275.co.uk/usa-canada/boston-photos.html</loc>
+        <lastmod>2014-09-11</lastmod>
+    </url>
+
+
+    <!-- coutdown -->
+    <url>
+        <loc>http://poc275.co.uk/countdown/countdown.html</loc>
+        <lastmod>2014-09-11</lastmod>
     </url>
 
 </urlset>

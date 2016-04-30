@@ -109,7 +109,7 @@ h3.space {
     height: 100px;
     width: 100px;
     border-radius: 50px;
-    background: url("../img/mugshot.jpg") no-repeat scroll left 50%;
+    background: url("../img/pete-mugshot.jpg") no-repeat scroll left 50%;
     margin: 0 auto;
     padding: 0;
 }
@@ -216,7 +216,11 @@ a.no-border {
 /* FOOTER STYLES 
     --------------------------------------------------*/
 footer {
-    color: #808080;
+    background-color: rgba(210, 210, 210, 1);
+    -webkit-box-shadow: 0 -20px 15px -17px #ccc;
+    -moz-box-shadow: 0 -20px 15px -17px #ccc;
+    -o-box-shadow: 0 -20px 15px -17px #ccc;
+    box-shadow: 0 -20px 15px -17px #ccc;
 }
 
 footer p {
@@ -225,16 +229,15 @@ footer p {
 }
 
 #footer-social {
-    background-color: #404040;
+    padding-top: 10px;
 }
 
 #footer-misc {
-    background-color: #303030;
-    padding: 5px 0;
-    font-size: small;
+    text-align: center;
 }
 
 #footer-logos {
+    padding: 15px 0;
     text-align: center;
     margin: 0;
 }
@@ -248,24 +251,24 @@ footer p {
     border: none;
 }
 
-#footer-logos a img {
-    opacity: 0.25;
+#footer-logos a i {
+    opacity: 0.35;
     -webkit-transition: opacity 0.5s ease-in-out;
     -moz-transition: opacity 0.5s ease-in-out;
     -o-transition: opacity 0.5s ease-in-out;
     transition: opacity 0.5s ease-in-out;
 }
 
-#footer-logos a:hover img,
-#footer-logos a:focus img {
-    opacity: 0.7;
+#footer-logos a:hover i,
+#footer-logos a:focus i {
+    opacity: 0.8;
 }
 
 
 
 /*---------------------------------------------------------------
     COMPLETE-PORTFOLIO.HTML PAGE
-----------------------------------------------------------------*/
+----------------------------------------------------------------
 /* 
     TOOLBAR STYLES
 ----------------------------------------------------------------*/
