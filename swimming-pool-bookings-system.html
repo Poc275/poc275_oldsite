@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="The design and implementation of a swimming pool booking and timetable application" />
+        <title>Swimming Pool Booking &amp; Timetable Application</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/main-styles.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+
+        <header class="alt-intro" role="banner">
+            <article class="story" id="intro">
+                <section>
+                    <div id="mugshot"></div>
+                    <h1><a href="index.html">Peter O&apos;Connor</a></h1>
+                    <p id="sub-heading">A Programmer's Portfolio</p>
+                </section>
+            </article>
+        </header>
+
+        <div role="main">
+            <article class="story" id="first">
+                <section class="content-col">
+
+                    <h2 class="space">The design and implementation of a swimming pool booking &amp; timetable application</h2>
+
+                    <p class="space">The swimming pool has various sessions throughout the day, some are open to the general public, while others are open only to members. This 
+                        required two sub-systems, one to manage the memberships and one to record the session bookings. This broader brief meant that more consideration had to go 
+                        into the design of the application. Coding immediately at the beginning, only to resort to major changes later when problems were envisaged was not an option.</p>
+
+                    <p class="space">The brief was examined for nouns that were of importance, these formed the classes of the application. A class diagram was created using 
+                        <abbr title="unified modelling language">UML</abbr>. The design was refined over time by using techniques such as use-case scenarios to ensure all of the classes were identified. 
+                        The diagram was created using <a href="http://www.sparxsystems.com/products/ea/">Enterprise Architect</a>, so when the diagram was complete, the skeleton code could 
+                        be automatically generated.</p>
+
+                    <p class="space">One of the requirements of the application was that bookings could be taken concurrently. Multi-threading and modeless dialog boxes were used to enable 
+                        multiple booking forms to be open at the same time. This also required the use of mutexes to lock the bookings timetable whilst it was being updated.</p>
+
+                    <p class="space">This project made me realise how important the design stage is in programming a new application. The temptation is to start coding immediately but the constant 
+                        modifications to the class diagram highlighted that this would have been a flawed approach. The study of the brief to examine nouns, mixed with use-case scenarios really 
+                        helped to identify the classes and methods that the system would require. Multi-threading proved to be a challenge, particularly when it came to ensuring shared resources 
+                        were locked. It was crucial that activities were locked when a thread was booking to them to prevent over-subscription. This required a lot of testing to try and find all 
+                        of the possible race conditions.</p>
+
+                </section>
+
+                <div class="figure-col">
+                    <figure>
+                        <a href="img/final-uml-class-diagram.jpg"><img src="img/final-uml-class-diagram.jpg" alt="final UML class diagram" /></a>
+                        <figcaption>The final class diagram.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="img/swimming-pool-system-main-menu.png"><img src="img/swimming-pool-system-main-menu.png" alt="application home screen" /></a>
+                        <figcaption>Application home screen displaying which sessions were available for the current week.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="img/swimming-pool-new-booking-dialog.png"><img src="img/swimming-pool-new-booking-dialog.png" alt="new booking modeless dialog" /></a>
+                        <figcaption>New booking modeless dialog.</figcaption>
+                    </figure>
+                </div>
+            </article>
+        </div>
+
+        <footer class="clear">
+            <address id="footer-social">
+                <p>Have a question about anything on this site? Contact me via:</p>
+                <ul id="footer-logos">
+                    <li><a href="mailto:poc275@gmail.com?Subject=Website%20Enquiry"><img src="img/envelope-icon.png" alt="contact me via e-mail" /></a></li>
+                    <li><a href="https://twitter.com/?status=@poc275"><img src="img/twitter-logo.png" alt="contact me via twitter" /></a></li>
+                    <li><a href="http://stackoverflow.com/users/1929718/poc275"><img src="img/so-icon.png" alt="look me up on stack overflow" /></a></li>
+                </ul>
+            </address>
+            <div id="footer-misc" role="contentinfo">
+                <p>Page last updated on <time datetime="2014-10-05">October 9th, 2014</time></p>
+            </div>
+        </footer>
+
+    </body>
+</html>

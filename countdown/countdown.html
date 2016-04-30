@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8" />
+        <title>Countdown Letters Game</title>
+
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/main-styles.css">
+        <link rel="stylesheet" href="countdown.css">
+        <!-- google fonts --> 
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+        <script src="../js/libs/modernizr-2.5.3.min.js"></script>
+    </head>
+    <body>
+        <div id="parent">
+
+            <canvas id="clock" width="250" height="250">
+                
+            </canvas>
+
+            <table>
+                <tr id="board">
+                    <td class="boardTile"></td>
+                    <td class="boardTile"></td>
+                    <td class="boardTile"></td>
+                    <td class="boardTile"></td>
+                    <td class="boardTile"></td>
+                    <td class="boardTile"></td>
+                    <td class="boardTile"></td>
+                    <td class="boardTile"></td>
+                    <td class="boardTile"></td>
+                </tr>
+            </table>
+
+            <br />
+
+            <table>
+                <tr id="player">
+                    <td class="playerTile"></td>
+                    <td class="playerTile"></td>
+                    <td class="playerTile"></td>
+                    <td class="playerTile"></td>
+                    <td class="playerTile"></td>
+                    <td class="playerTile"></td>
+                    <td class="playerTile"></td>
+                    <td class="playerTile"></td>
+                    <td class="playerTile"></td>
+                </tr>
+            </table>
+
+            <button onclick="vowelButtonClick()">Vowel</button>
+            <button onclick="consonantButtonClick()">Consonant</button>
+
+            <p id="nResults"></p>
+            <p id="results"></p>
+
+        </div>
+
+        <script src="countdown.js"></script>
+    </body>
+</html>

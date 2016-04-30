@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    
+    <url>
+        <loc>http://www.poc275.co.uk/index.html</loc>
+        <video:video>
+            <video:content_loc>
+                http://www.poc275.co.uk/vid/Intro3dDemo.mp4
+            </video:content_loc>
+            <video:title>3D Software Renderer</video:title>
+            <video:description>Demonstration of my 3D Software Renderer written in C++</video:description>
+        </video:video>
+        <lastmod>2014-09-21</lastmod>
+    </url>
+
+    <url>
+        <loc>http://www.poc275.co.uk/complete-portfolio.html</loc>
+        <lastmod>2014-10-17</lastmod>
+    </url>
+
+    <url>
+        <loc>http://www.poc275.co.uk/ipc-itc-windows-api.html</loc>
+        <lastmod>2014-10-05</lastmod>
+    </url>
+
+    <url>
+        <loc>http://www.poc275.co.uk/information-tracker.html</loc>
+        <lastmod>2014-10-05</lastmod>
+    </url>
+
+    <url>
+        <loc>http://www.poc275.co.uk/website-redesign-report.html</loc>
+        <lastmod>2014-10-05</lastmod>
+    </url>
+
+    <url>
+        <loc>http://www.poc275.co.uk/programming-language-design.html</loc>
+        <lastmod>2014-10-08</lastmod>
+    </url>
+
+    <url>
+        <loc>http://www.poc275.co.uk/swimming-pool-bookings-system.html</loc>
+        <lastmod>2014-10-09</lastmod>
+    </url>
+
+    <url>
+        <loc>http://www.poc275.co.uk/text-analyser.html</loc>
+        <lastmod>2014-10-11</lastmod>
+    </url>
+
+    <url>
+        <loc>http://www.poc275.co.uk/classified-adverts-web-app.html</loc>
+        <lastmod>2014-10-12</lastmod>
+    </url>
+
+    <url>
+        <loc>http://www.poc275.co.uk/distributed-application-development.html</loc>
+        <lastmod>2014-10-14</lastmod>
+    </url>
+
+    <url>
+        <loc>http://www.poc275.co.uk/music-collection-manager-pair-programming.html</loc>
+        <lastmod>2014-10-15</lastmod>
+    </url>
+
+    <url>
+        <loc>http://www.poc275.co.uk/multi-user-database-system.html</loc>
+        <lastmod>2014-10-17</lastmod>
+    </url>
+
+    <url>
+        <loc>http://www.poc275.co.uk/verb-test.php</loc>
+        <lastmod>2014-10-17</lastmod>
+    </url>
+
+</urlset>

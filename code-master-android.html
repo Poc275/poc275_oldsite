@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="An android application called Code Master based on the old board game Mastermind" />
+        <title>Code Master Android Application</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/main-styles.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+
+        <header class="alt-intro" role="banner">
+            <article class="story" id="intro">
+                <section>
+                    <div id="mugshot"></div>
+                    <h1><a href="index.html">Peter O&apos;Connor</a></h1>
+                    <p id="sub-heading">A Programmer's Portfolio</p>
+                </section>
+            </article>
+        </header>
+
+        <div role="main">
+            <article class="story" id="first">
+                <section class="content-col">
+
+                    <h2 class="space">Code Master Android Application</h2>
+
+                    <p class="space">The application is a remake of the old board game Mastermind where the object of the game is to crack a coloured code within an allotted number of attempts. 
+                        Feedback pegs indicate how close you are to a correct guess after each turn. If you have an Android powered phone 
+                        <a href="http://market.android.com/details?id=com.pete.assignment.codemaster">download Code Master from Google Play</a> and try it out.</p>
+
+                    <p class="space">This project provided a different type of challenge because of the hardware limitations inherent in mobile devices. Due to the multi-tasking nature 
+                        of a mobile device, many applications will be running at any one time, meaning memory is at a premium. This warranted a judicious use of new objects to minimise 
+                        time spent garbage collecting, member variables were accessed directly instead of via getters and setters to speed things up, and static classes were favoured 
+                        over non-static to save on memory.</p>
+
+                    <p class="space">One of the most important optimisations was the use of threads. The main thread drives the user interface loop, so if this is affected by slow 
+                        performance the user receives a not responding warning. This acute lack of responsiveness is particularly evident on touch screen devices where users expect a much 
+                        faster response to interactions than with a traditional mouse. Therefore any work that is potentially time consuming is fired off onto a child thread, 
+                        keeping the user interface responsive.</p>
+                </section>
+
+                <div class="figure-col">
+                    <figure>
+                        <a href="img/code-master-win.jpg"><img src="img/code-master-win.jpg" alt="code master screenshot" /></a>
+                        <figcaption>In game screenshot showing the code being broken.</figcaption>
+                    </figure>
+                </div>
+            </article>
+        </div>
+
+        <footer class="clear">
+            <address id="footer-social">
+                <p>Have a question about anything on this site? Contact me via:</p>
+                <ul id="footer-logos">
+                    <li><a href="mailto:poc275@gmail.com?Subject=Website%20Enquiry"><img src="img/envelope-icon.png" alt="contact me via e-mail" /></a></li>
+                    <li><a href="https://twitter.com/?status=@poc275"><img src="img/twitter-logo.png" alt="contact me via twitter" /></a></li>
+                    <li><a href="http://stackoverflow.com/users/1929718/poc275"><img src="img/so-icon.png" alt="look me up on stack overflow" /></a></li>
+                </ul>
+            </address>
+            <div id="footer-misc" role="contentinfo">
+                <p>Page last updated on <time datetime="2014-10-14">November 14th, 2014</time></p>
+            </div>
+        </footer>
+
+
+        <!-- Javascript code prettifier lib -->
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=cs"></script>
+
+    </body>
+</html>

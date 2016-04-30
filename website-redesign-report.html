@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="A report into a local packaging company's website highlighting areas for improvement. The site was then overhauled to implement the findings" />
+        <title>Website report and redesign</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/main-styles.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+        <header class="alt-intro" role="banner">
+            <article class="story" id="intro">
+                <section>
+                    <div id="mugshot"></div>
+                    <h1><a href="index.html">Peter O&apos;Connor</a></h1>
+                    <p id="sub-heading">A Programmer's Portfolio</p>
+                </section>
+            </article>
+        </header>
+
+        <div role="main">
+            <article class="story" id="first">
+                <section class="content-col">
+                    <h2 class="space">Website report and redesign</h2>
+
+                    <p class="space">The report focused on the following aspects:</p>
+
+                    <ul>
+                        <li>How well the site adheres to current web standards</li>
+                        <li>Cross-browser compatibility</li>
+                        <li>Accessibility &amp; usability</li>
+                        <li>Search engine optimisation</li>
+                        <li>Site content in relation to the target audience</li>
+                    </ul>
+
+                    <p class="space">One of the major problems with the site was a lack of separation between content and style. The entire structure was created using a HTML 
+                            table, which it isn’t designed for. The CSS was practically non-existent as all of the styling was done inside the HTML. This led to a horrible tangle 
+                            of HTML code that would be extremely difficult to maintain.</p>
+
+                    <p class="space">This also had a knock on accessibility. By improving the structure of the site and separating content, style and interactivity correctly between 
+                        HTML, CSS and JavaScript, the accessibility of the site improved as screen readers were able to scan the pages and users could modify certain aspects such as 
+                        font size without the layout breaking.</p>
+
+                    <p class="space">This project really opened my eyes to the importance of a well written website. By writing clear, validated mark-up and separating the styling, 
+                        many benefits can be achieved, such as cross-browser compatibility, better search ranking, easier maintenance and improved accessibility. This was a thoroughly 
+                        enjoyable project, I particularly enjoyed the feeling of ‘crafting’ a web page through well written HTML and CSS as up until this point I had only used 
+                        <abbr title="what you see is what you get">WYSIWYG</abbr> editors such as Dreamweaver with little appreciation of the code that it created.</p>
+
+                </section>
+
+                <div class="figure-col">
+                    <figure>
+                        <a href="img/extra-packaging-original-site.png"><img src="img/extra-packaging-original-site.png" alt="original site screenshot before the redesign" /></a>
+                        <figcaption>Original site before the redesign.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="img/original-site-source-code.png"><img src="img/original-site-source-code.png" alt="source code of the original site home page" /></a>
+                        <figcaption>Source code of the original home page showing the misuse of the table tag.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="img/extra-packaging-redesiged-home-page.png"><img src="img/extra-packaging-redesiged-home-page.png" alt="redesigned home page screenshot" /></a>
+                        <figcaption>Redesigned home page.</figcaption>
+                    </figure>
+                </div>
+            </article>
+        </div>
+
+        <footer class="clear">
+            <address id="footer-social">
+                <p>Have a question about anything on this site? Contact me via:</p>
+                <ul id="footer-logos">
+                    <li><a href="mailto:poc275@gmail.com?Subject=Website%20Enquiry"><img src="img/envelope-icon.png" alt="contact me via e-mail" /></a></li>
+                    <li><a href="https://twitter.com/?status=@poc275"><img src="img/twitter-logo.png" alt="contact me via twitter" /></a></li>
+                    <li><a href="http://stackoverflow.com/users/1929718/poc275"><img src="img/so-icon.png" alt="look me up on stack overflow" /></a></li>
+                </ul>
+            </address>
+            <div id="footer-misc" role="contentinfo">
+                <p>Page last updated on <time datetime="2014-10-05">October 5th, 2014</time></p>
+            </div>
+        </footer>
+
+
+        <!-- Javascript code prettifier lib -->
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=html"></script>
+
+    </body>
+</html>

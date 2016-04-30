@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="a distributed facebook-like application written using Java and Google App Engine" />
+        <title>Distributed application development</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/main-styles.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+
+        <header class="alt-intro" role="banner">
+            <article class="story" id="intro">
+                <section>
+                    <div id="mugshot"></div>
+                    <h1><a href="index.html">Peter O&apos;Connor</a></h1>
+                    <p id="sub-heading">A Programmer's Portfolio</p>
+                </section>
+            </article>
+        </header>
+
+        <div role="main">
+            <article class="story" id="first">
+                <section class="content-col">
+
+                    <h2 class="space">Distributed Application Development</h2>
+
+                    <p class="space">The aim of this project was twofold: firstly to develop an understanding of the technological foundations in distributed systems, and 
+                        secondly, to develop expertise in designing and developing robust and scalable distributed systems.</p>
+
+                    <p class="space">The project brief was to design, develop and deploy a Facebook-like application using App Engine. The application had the following requirements:</p>
+
+                    <ul>
+                        <li>Friends in a network should be able to share resources (photographs, web pages, videos etc.).</li>
+                        <li>The application should be able to find friends in networks and make friend recommendations.</li>
+                        <li>Friends in a network should be able to like/unlike their own and friend’s resources.</li>
+                        <li>A ‘preferential search’ mechanism is required where the most popular resources appear at the top of search results.</li>
+                        <li>The social network needs to be visualised.</li>
+                    </ul>
+
+                    <p class="space">The project required a lot of up-front research and design. We chose the Java runtime environment for App Engine as this is the language that the 
+                        group was most comfortable with. Programming for App Engine was very different to what we had been used to, particularly when it came to creating the back-end database. 
+                        Traditional relational databases do not scale well, so a NoSQL approach was used. This incurred a steep learning curve.</p>
+
+                    <p class="space">To achieve scalability and robustness we decided to let existing services do the heavy work for us. This resulted in us using YouTube to provide the 
+                        videos, Gmail to provide friend requests/recommendations, we looked at the possibility of using Flickr for the photos, but a suitable ‘in-house’ images API proved to 
+                        be more suitable as it linked very easily within App Engine.</p>
+
+                    <p class="space">We had to design algorithms to make credible friend recommendations and to rank the popularity of shared resources. By importing a user’s Gmail 
+                        contacts (this could be done easily as users login into the application with their Gmail credentials), we could provide a basic but effective friend of friends 
+                        algorithm. More complex recommendations were researched, such as content matching, where people who have liked/disliked similar resources are recommended to each 
+                        other. However, this algorithm required extra meta-data that wasn’t available to us from the APIs we were utilising. For the popularity ranking we used an age of 
+                        vote algorithm that aimed to be more useful than a simple ordering of likes versus dislikes. The age of the vote was important to take into account to ensure the 
+                        rankings were relevant in terms of what is currently popular. This was programmed using a cron job which updated a ranking score for each resource at regular intervals.</p>
+
+                    <p class="space">The project was very challenging but it felt extremely relevant in today’s world of computing where sites such as Facebook and Twitter are ubiquitous. It 
+                        did feel we were only scratching the surface of what is required in a true distributed application. I would personally have liked to study more complex algorithms, which 
+                        may have led onto a MapReduce style of computation for scalability. I would have also liked to investigate latency issues to test how the application would respond to 
+                        heavy traffic.</p>
+
+                </section>
+
+                <div class="figure-col">
+                    <figure>
+                        <a href="img/final-bookface-use-case-diagram.png"><img src="img/final-bookface-use-case-diagram.png" alt="application use case diagram" /></a>
+                        <figcaption>Use case diagram. This helped the group identify all of the features that would be required. Each individual member could then pick up 
+                            a particular feature which aided team working.</figcaption>
+                    </figure>
+                </div>
+            </article>
+        </div>
+
+        <footer class="clear">
+            <address id="footer-social">
+                <p>Have a question about anything on this site? Contact me via:</p>
+                <ul id="footer-logos">
+                    <li><a href="mailto:poc275@gmail.com?Subject=Website%20Enquiry"><img src="img/envelope-icon.png" alt="contact me via e-mail" /></a></li>
+                    <li><a href="https://twitter.com/?status=@poc275"><img src="img/twitter-logo.png" alt="contact me via twitter" /></a></li>
+                    <li><a href="http://stackoverflow.com/users/1929718/poc275"><img src="img/so-icon.png" alt="look me up on stack overflow" /></a></li>
+                </ul>
+            </address>
+            <div id="footer-misc" role="contentinfo">
+                <p>Page last updated on <time datetime="2014-10-14">October 14th, 2014</time></p>
+            </div>
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="An information tracker application written in C# utilising interfaces" />
+        <title>C# Information Tracker App</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/main-styles.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+
+        <header class="alt-intro" role="banner">
+            <article class="story" id="intro">
+                <section>
+                    <div id="mugshot"></div>
+                    <h1><a href="index.html">Peter O&apos;Connor</a></h1>
+                    <p id="sub-heading">A Programmer's Portfolio</p>
+                </section>
+            </article>
+        </header>
+
+        <div role="main">
+            <article class="story" id="first">
+                <section class="content-col">
+
+                    <h2 class="space">C# Information Tracker Application</h2>
+
+                    <p class="space">This application is a simple Windows forms app that stores personal information (passwords, shopping lists, credit card details etc.). An 
+                        interface which defines the information that can be stored was supplied, along with a brief outline of what each method and property needs to do.</p>
+
+                    <pre class="prettyprint">
+                        <code>
+public interface IInfoCard
+{
+    // The name is used to identify the Info Card in the tree view
+    string Name { get; set; }
+
+    // This is used to determine where the card is positioned in the tree view
+    string Category { get; }
+
+    // Returns the data stored in the info card so it can be written to a file
+    string GetDataAsString();
+
+    // This method displays a windows form that displays the data in the info card
+    void DisplayData(Panel displayPanel);
+
+    // This method should close the form that is being displayed
+    void CloseDisplay();
+
+    // This method displays a modal dialog box that allows the data to be edited.
+    // returns true if the data has been changed, false if it has not
+    bool EditData();
+}
+                        </code>
+                    </pre>
+
+                    <p class="space">This enabled the application to be extended by implementing the different types of personal information as plug-in modules. This also proved to be an 
+                        excellent enabler for team working as it allowed multiple people to work on the same application. The interface acted as a ‘contract’, forcing the classes to 
+                        implement certain methods and properties, meaning that they could be added seamlessly into the main application without any errors.</p>
+                </section>
+
+                <div class="figure-col">
+                    <figure>
+                        <a href="img/information-tracker-app.png"><img src="img/information-tracker-app.png" alt="information tracker home screen" /></a>
+                        <figcaption>Application home screen.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="img/information-tracker-new-card-dialog.png"><img src="img/information-tracker-new-card-dialog.png" alt="new card dialog box" /></a>
+                        <figcaption>New card dialog box. This highlights the numerous plug-in modules that were developed using the interface.</figcaption>
+                    </figure>
+                </div>
+            </article>
+        </div>
+
+        <footer class="clear">
+            <address id="footer-social">
+                <p>Have a question about anything on this site? Contact me via:</p>
+                <ul id="footer-logos">
+                    <li><a href="mailto:poc275@gmail.com?Subject=Website%20Enquiry"><img src="img/envelope-icon.png" alt="contact me via e-mail" /></a></li>
+                    <li><a href="https://twitter.com/?status=@poc275"><img src="img/twitter-logo.png" alt="contact me via twitter" /></a></li>
+                    <li><a href="http://stackoverflow.com/users/1929718/poc275"><img src="img/so-icon.png" alt="look me up on stack overflow" /></a></li>
+                </ul>
+            </address>
+            <div id="footer-misc" role="contentinfo">
+                <p>Page last updated on <time datetime="2014-10-05">October 5th, 2014</time></p>
+            </div>
+        </footer>
+
+
+        <!-- Javascript code prettifier lib -->
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=cs"></script>
+
+    </body>
+</html>

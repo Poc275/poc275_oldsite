@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="a music collection manager app written using pair programming" />
+        <title>Music Collection Application</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/main-styles.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+
+        <header class="alt-intro" role="banner">
+            <article class="story" id="intro">
+                <section>
+                    <div id="mugshot"></div>
+                    <h1><a href="index.html">Peter O&apos;Connor</a></h1>
+                    <p id="sub-heading">A Programmer's Portfolio</p>
+                </section>
+            </article>
+        </header>
+
+        <div role="main">
+            <article class="story" id="first">
+                <section class="content-col">
+
+                    <h2 class="space">Music collection manager</h2>
+
+                    <p class="space">Up until this point projects had been individual efforts, unfortunately this isn’t realistic. In the real world programs are in written in groups 
+                        using different methodologies. The methodology used in this project was extreme programming, which involves teams of equal partners (developers, managers and customers) 
+                        ensuring focus isn’t lost. This is coupled with shorter release times to get input at more regular intervals.</p>
+
+                    <p class="space">As part of the extreme programming methodology, pair programming was used for the actual development. The idea behind pair programming is to have two 
+                        programmers working at a single machine, one is the driver, who is actually writing the code, and the other is the observer, who is watching, checking for errors 
+                        and keeping the work on track. After a certain amount of time, the roles are reversed. As per the extreme programming methodology, the goal is to get constant feedback, 
+                        ironing out problems at the earliest possible stage.</p>
+
+                    <p class="space">The application is a Windows forms program that manages a music collection. Conventional albums as well as compilation albums are supported 
+                        (through the use of inheritance). Users can search for albums or individual tracks. The collection is stored in a file using serialisation.</p>
+
+                    <p class="space">We found that pair programming requires the right kind of people to work effectively. Ideally people with good social skills will be better suited to this 
+                        kind of approach. This is because a good working relationship needs to be formed so each person feels free to point out problems and suggest solutions, whilst at the 
+                        same time not becoming a ‘backseat driver’, interrupting every time a slight error/typo is spotted. We also found that getting programmers of equal ability and experience 
+                        would be beneficial, otherwise the relationship can degrade into a mentor-student approach where a less experienced programmer simply watches what the senior programmer 
+                        is doing, which defeats the object.</p>
+
+                    <p class="space">By the end of the project we could see the advantages of such an approach, bugs were discovered earlier, unit tests could be written by one person and coded 
+                        by another and we managed to pass on a lot of knowledge to each other. However we already knew each other quite well, so we felt comfortable working together, other teams 
+                        might not have this luxury, which could lead to problems.</p>
+
+                </section>
+
+                <div class="figure-col">
+                    <figure>
+                        <a href="img/music-collection-initial-class-diagram.jpg"><img src="img/music-collection-initial-class-diagram.jpg" alt="music collection manager initial class diagram" /></a>
+                        <figcaption>The class diagram helped us work out who in the pair would be best at coding each feature.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="img/music-collection-add-cd.png"><img src="img/music-collection-add-cd.png" alt="add cd dialog box" /></a>
+                        <figcaption>Add a new record dialog.</figcaption>
+                    </figure>
+                    
+                    <figure>
+                        <a href="img/music-collection-app-display-collection.png"><img src="img/music-collection-app-display-collection.png" alt="home screen displaying the music collection" /></a>
+                        <figcaption>Application home screen displaying the music collection.</figcaption>
+                    </figure>
+                </div>
+            </article>
+        </div>
+
+        <footer class="clear">
+            <address id="footer-social">
+                <p>Have a question about anything on this site? Contact me via:</p>
+                <ul id="footer-logos">
+                    <li><a href="mailto:poc275@gmail.com?Subject=Website%20Enquiry"><img src="img/envelope-icon.png" alt="contact me via e-mail" /></a></li>
+                    <li><a href="https://twitter.com/?status=@poc275"><img src="img/twitter-logo.png" alt="contact me via twitter" /></a></li>
+                    <li><a href="http://stackoverflow.com/users/1929718/poc275"><img src="img/so-icon.png" alt="look me up on stack overflow" /></a></li>
+                </ul>
+            </address>
+            <div id="footer-misc" role="contentinfo">
+                <p>Page last updated on <time datetime="2014-10-15">October 15th, 2014</time></p>
+            </div>
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,262 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/i/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Peter O&apos;Connor's Programming Portfolio</title>
+  <meta name="description" content="An online CV containing a portfolio of my software development projects to highlight my work">
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/main-styles.css">
+  <!-- google fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+       Modernizr enables HTML5 elements & feature detects for optimal performance.
+       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+  <!-- // <script src="js/libs/modernizr-2.5.3.min.js"></script> -->
+</head>
+
+<body>
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or
+     <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  
+    <header class="alt-intro" role="banner">
+        <article class="story" id="intro">
+            <section>
+                <div id="mugshot"></div>
+                <h1>Peter O&apos;Connor</h1>
+                <p id="sub-heading">A Programmer's Portfolio</p>
+                <h2>This site came about as I was struggling to rewrite my CV. I had just completed my BSc in Computer Science with the aspiration of moving into software development. 
+                    I was trying to tailor the CV to highlight some of my software projects. Then I had a thought, instead of trying to describe what I’ve done, why not show it? 
+                    Not a particularly ground breaking eureka moment, designers always showcase their work, so programmers must as well. Only, I couldn’t find many programming portfolios 
+                    on the web. This seemed strange as a portfolio is an excellent domain to showcase your work that you cannot convey succinctly in a standard CV.</h2>
+                <h3 class="space">This site is a response to this issue. It is a portfolio of my programming projects to date. You can look through a <a href="complete-portfolio.html">complete 
+                    list of my work</a>, or to read my favourite projects, keep scrolling.</h3>
+            </section>
+        </article>
+    </header>
+
+    <div role="main">
+        <article class="story" id="first">
+            <section class="content-col">
+                <h1>Data visualisation user controls</h1>
+                <p class="space">This was my final year dissertation project. I was keen to study this area of computing as it became apparent during my studies that data processing 
+                    is one of the most important challenges that lie ahead. Without resorting to hackneyed slogans, data is now being produced at exponential rates thanks 
+                    to huge investment in sensing, simulating, and communication technologies. Couple this with a decrease in storage costs and you end up with a situation 
+                    where our ability to collect data has outstripped our ability to process it. Data visualisation (the graphical representation of data) is an important 
+                    tool which can help redress  the balance.</p>
+                            
+                <p class="space">My research uncovered a situation where the disparate disciplines involved in the field of data visualisation were operating in apparent isolation. 
+                    This enables the creation of inaccurate data visualisations, which is surprisingly evident in software. The lack of collaboration allows the conventional 
+                    rules to be broken because ultimately, developers of data visualisation software were not aware of the founding principles.</p>
+                            
+                <p class="space">This results in a ‘gap’ in current work where the wisdom of each discipline needs combining as a whole. Data visualisation user controls were created to fill 
+                    this gap. User controls enable programmers to create visualisations that enforce the accepted wisdom of the field, without them having to be experts. 
+                    This also redresses the balance between the widely available tools that target data visualisation experts who may not have any programming experience, and 
+                    the lack of tools that target the reverse.</p>
+
+                <p class="space">The controls implement the research findings through a sample set of visualisation techniques specifically chosen as they are suited to larger datasets 
+                    that are now so common, and they also enable interactivity, which is a vital aspect when trying to make useful data discoveries:</p>
+
+                <table class="data-vis-list">
+                    <tr id="horizontal-divider">
+                        <td class="vertical-divider">
+                            <img src="img/treemap-icon.png" alt="treemap pictorial representation" />
+                            <span>Treemap</span>
+                            <span class="data-vis-descriptions">A treemap visualises data through the use of rectangles. The area of the rectangle is 
+                                the encoding feature, which can also contain further nested rectangles to depict a hierarchy.</span>
+                        </td>
+                        <td>
+                            <img src="img/parallel-coords-icon.png" alt="parallel coordinates pictorial representation" />
+                            <span>Parallel Coordinates</span>
+                            <span class="data-vis-descriptions">Parallel coordinates use parallel axes for each data dimension. Then for each unit of data, a 
+                                line is drawn from left to right, moving up or down depending on the values at each axis.</span></td>
+                    </tr>
+                    <tr>
+                        <td class="vertical-divider">
+                            <img src="img/graduated-symbol-map-icon.png" alt="graduated symbol map pictorial representation" />
+                            <span>Graduated Symbol Map</span>
+                            <span class="data-vis-descriptions">Graduated symbol maps encode geographic data through the use of glyphs. A glyph is placed 
+                                on the map and sized according to certain variables. The glyphs can be simple shapes, or more complex depending on the amount of variables.</span>
+                        </td>
+                        <td>
+                            <img src="img/heatmap-icon.png" alt="heatmap pictorial representation" />
+                            <span>Heatmap</span>
+                            <span class="data-vis-descriptions">A heatmap encodes numbers through the use of colour. This results in a grid of the data where each 
+                                cell represents a value and is coloured based on the value.</span>
+                        </td>
+                    </tr>
+                </table>
+
+                <p class="clear space">The Windows runtime (WinRT) was chosen as the target environment, although this is arbitrary as the controls have been 
+                    built up using standard controls that are widely available in other environments. The full dissertation has been published in the 
+                    <a href="http://computing.derby.ac.uk/ojs/index.php/da/article/view/53">university’s online journal.</a> Please feel free to
+                    <a href="https://github.com/Poc275/DataVisUserControls">use the controls</a> and expand upon them.</p>
+            </section>
+
+            <div class="figure-col">
+                <figure>
+                    <a href="img/parallel-coords-car-fuel-efficiency.jpg"><img src="img/parallel-coords-car-fuel-efficiency-thumb.jpg" alt="parallel coordinates plot of car fuel efficiency data" /></a>
+                    <figcaption>A parallel coordinates plot visualising car fuel efficiency data.</figcaption>
+                </figure>
+
+                <figure>
+                    <a href="img/treemap-software-lines-of-code.jpg"><img src="img/treemap-software-lines-of-code-thumb.jpg" alt="treemap visualising large software projects by lines of code" /></a>
+                    <figcaption>Treemap visualising large software projects by lines of code.</figcaption>
+                </figure>
+
+                <figure>
+                    <a href="img/gsm-world-alcohol-consumption.jpg"><img src="img/gsm-world-alcohol-consumption-thumb.jpg" alt="graduated symbol map visualising worldwide alcohol consumption" /></a>
+                    <figcaption>Graduated symbol map visualising worldwide alcohol consumption.</figcaption>
+                </figure>
+
+                <figure>
+                    <a href="img/heatmap-higher-education-institutions.jpg"><img src="img/heatmap-higher-education-institutions-thumb.jpg" alt="heatmap of higher education institutions stats" /></a>
+                    <figcaption>A heatmap visualising various statistics of UK higher education institutions.</figcaption>
+                </figure>
+            </div>
+        </article>
+
+        <div class="alt clear">
+            <article class="story">
+                <section class="content-col">
+                    <h1>C++ 3D Software Renderer</h1>
+                    <p class="space">This project provided an appreciation of how 3D graphics APIs such as DirectX and OpenGL work under the covers. To do this, a software renderer (written in C++) was 
+                        built up from scratch. The following concepts were covered:</p>
+                    <ul>
+		                <li>Geometric Transformations – how to get from model co-ordinates to screen co-ordinates a.k.a. the viewing pipeline</li>
+		                <li>Vector maths – calculating vectors from points, vector addition, vector length, dot product and cross product</li>
+		                <li>Lighting – ambient, directional, point and spot lighting</li>
+		                <li>Reflection – Diffuse and specular (Phong/Blinn-Phong reflection models)</li>
+		                <li>Rasterisation – Gouraud shading</li>
+		                <li>Texturing</li>
+                        <li>Cameras &amp; Viewpoints – the view frustum, polygon culling and clipping</li>
+	                </ul>
+	
+                    <p class="space">The evolution of Marvin image demonstrates the progression of the renderer. It starts with a simple wireframe, progressing to flat shaded 
+                        polygons (using GDI+), and ending with a custom Gouraud shader to smooth out the image. Lighting effects are then applied to modulate the overall appearance, 
+                        and finally the model is textured. The full evolution can be seen in the video along with an explanation of what is being demonstrated at each stage.</p>
+
+	                <p class="space">This was probably the most challenging project I have worked on to date, but ultimately it proved very rewarding as some really nice effects can be achieved. I really enjoyed 
+                        the modular nature of how the project was built up, with a study of a particular algorithm, followed by its implementation. This allowed the application to be built up gradually, 
+                        preventing it from becoming too overwhelming.</p>
+                </section>
+
+                <div class="figure-col">
+                    <figure>
+                        <a href="img/software-renderer-evolution.jpg"><img src="img/software-renderer-evolution-thumb.jpg" alt="software renderer evolution depicting the changing states of a model" /></a>
+                        <figcaption>The evolution of Marvin the Martian.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <video controls="controls">
+		                    <source src="vid/Intro3dDemo.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+		                    <source src="vid/Intro3dDemo.webm" type='video/webm; codecs="vp8, vorbis"' />
+		                    <source src="vid/Intro3dDemo.ogv" type='video/ogg; codecs="theora, vorbis"' />
+		                    <iframe width="560" height="315" src="//www.youtube.com/embed/8fK-XdEcl08?rel=0"></iframe>
+	                    </video>
+                        <figcaption>Final software renderer demonstration.</figcaption>
+                    </figure>
+                </div>
+            </article>
+        </div>
+
+        <div class="clear">
+            <article class="story">
+                <section class="content-col">
+                    <h1>Street Sounds</h1>
+                    <p class="space">This was an exciting project as it gave me the chance to develop for the latest Windows 8 operating system. The brief was just to create something ‘cool’ 
+                        (leaving just enough rope to hang myself with). Looking back, this proved to be an excellent form of motivation. Definitive briefs can often stifle innovation 
+                        as you simply work through each requirement. I found that with a looser set of requirements I was more inclined to keep adding functionality as there 
+                        was just enough doubt there as to what constituted a good application.</p>
+                            
+                    <p class="space">As music is one of my passions, I was interested in creating a music based application. Couple this with one of <a href="https://soundcloud.com">my favourite 
+                        music sites</a> and we have a good starting point. One of my first ideas was for a way of people to find information about street musicians that they come across. 
+                        This required some form of geo-location functionality which was provided by Bing Maps.</p>
+                            
+                    <p class="space">One of the projects long running issues was the lack of attributes that the musicians apply to their music. Tracks uploaded to SoundCloud have many useful 
+                        fields to fill in, unfortunately they are not mandatory and many are free-entry fields, which give a disparate range of search results when you try and query 
+                        for such things as street musicians.</p>
+
+                    <p class="space">The lack of street musicians on SoundCloud resulted in the project evolving into a broader music discovery application whilst still retaining the location 
+                        functionality. Users can browse for sounds near their current location, from a random point on the map, from a specific city, or they can just view the most 
+                        popular, or most recent tracks on SoundCloud and see where on the map they are from.</p>
+                            
+                    <p class="space">From a programming perspective, the built-in Visual Studio templates made sticking to the Windows Store design philosophy straight-forward. The majority of the 
+                        work was spent creating the data model, this made data-binding to the template controls relatively simple. The application is written in C#/XAML and utilises
+                        the Model-View-View Model (MVVM) pattern.</p>
+
+                    <p class="space">The application passed the Windows Certification Test but unfortunately it will not be appearing in the Windows Store due to changes in the SoundCloud 
+                        API that now cause the geo-tagging features to be ignored. This proved to be a valuable lesson in using third party APIs! However 
+                        <a href="https://github.com/Poc275/StreetSounds">I’ve made the code available</a> as it may still prove useful to anyone interested in developing 
+                        Windows Store Apps using the SoundCloud API.</p>
+                </section>
+
+                <div class="figure-col">
+                    <figure>
+                        <a href="img/street-sounds-home.jpg"><img src="img/street-sounds-home-thumb.jpg" alt="home screen of the street sounds windows store app" /></a>
+                        <figcaption>The home screen of the application displays the current hottest tracks on SoundCloud from your favourite genre.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="img/street-sounds-music-by-location.jpg"><img src="img/street-sounds-music-by-location-thumb.jpg" alt="location based searching in street sounds" /></a>
+                        <figcaption>Location based search features.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="img/street-sounds-player.jpg"><img src="img/street-sounds-player-thumb.jpg" alt="street sounds player and playlist screen including share contract" /></a>
+                        <figcaption>Street Sound's playlist screen including the share contract.</figcaption>
+                    </figure>
+                </div>
+            </article>
+        </div>
+
+    </div>
+
+    <footer class="clear">
+        <address id="footer-social">
+            <p>Have a question about anything on this site? Contact me via:</p>
+            <ul id="footer-logos">
+                <li><a href="mailto:poc275@gmail.com?Subject=Website%20Enquiry" title="Email me"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/?status=@poc275"><img src="img/twitter-logo.png" alt="contact me via twitter" /></a></li>
+                <li><a href="http://stackoverflow.com/users/1929718/poc275"><img src="img/so-icon.png" alt="look me up on stack overflow" /></a></li>
+            </ul>
+        </address>
+        <div id="footer-misc" role="contentinfo">
+            <p>Page last updated on <time datetime="2014-11-15">November 15th, 2014</time></p>
+        </div>
+    </footer>
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+  <!-- scripts concatenated and minified via build script -->
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <!-- end scripts -->
+
+</body>
+</html>

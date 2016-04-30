@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="the design and implementation of a multi-user database system for an online shoe store" />
+        <title>Multi-user database system</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/main-styles.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+
+        <header class="alt-intro" role="banner">
+            <article class="story" id="intro">
+                <section>
+                    <div id="mugshot"></div>
+                    <h1><a href="index.html">Peter O&apos;Connor</a></h1>
+                    <p id="sub-heading">A Programmer's Portfolio</p>
+                </section>
+            </article>
+        </header>
+
+        <div role="main">
+            <article class="story" id="first">
+                <section class="content-col">
+
+                    <h2 class="space">Multi-user database system for an online shoe store</h2>
+
+                    <p class="space">The first step was to identify the entities, relationships and attributes by analysing the project brief. The entities are the things of significance 
+                        about which information needs to be known, such as shoes, customers and orders. Relationships explain how the entities are related (one to one, one to many), and 
+                        the attributes contain specific information about the entities, such as shoe types, gender and payment method. The result of this is a conceptual entity relationship 
+                        diagram, which is a sort of first attempt at modelling the database. </p>
+
+                    <p class="space">The next step is to break down any many to many relationships as these cannot be represented by a relational database. The conceptual diagram had a many 
+                        to many relationship between ‘order’ and ‘stock’ i.e. each stock item may be bought via one or many order/s, and each order must be issued for one or many item/s of 
+                        stock. A weak entity called ‘order detail’ was created to break this relationship down. Now each order must contain one or many order detail/s, and each order detail 
+                        must relate to only one order (a one to many relationship). Each stock item may be bought via one or many order detail/s, and each order detail must order only one 
+                        stock item (also a one to many relationship). This is depicted in the logical entity relationship diagram.</p>
+
+                    <p class="space">The normalisation process was next. This is required to minimise data redundancy which causes integrity problems. Update and delete transactions may not 
+                        be consistently applied to all copies of the data causing inconsistencies. Normalisation was carried out up to <abbr title="Third Normal Form">3NF</abbr>. 
+                        This helped identify three more entities that were previously missed. A data dictionary was then produced to identify all of the data types for the attributes. The 
+                        model was now in a suitable state for it to be created in an actual DBMS. MySQL was chosen for this as it is a widely used and readily available DBMS. The physical 
+                        entity relationship model depicts the MySQL database.</p>
+
+                    <p class="space">A front end was then created using PHP to test the database. To accomplish this a navigation map was produced by applying use case scenarios to the system 
+                        to identify all of the pages that are required, which tables and attributes are required, whether the page is static or dynamic, public or private, and if the page 
+                        requires read or write permissions on the database. The idea is that a front end developer can pick this up and have an immediate overview of how to put the site 
+                        together. It is also often shown to business managers for approval.</p>
+
+                    <p class="space">A second version of the system was created using SQL Server and ASP.Net. This combination of open source and proprietary systems provided a broad appreciation 
+                        of the available <abbr title="Database Management Systems">DBMS</abbr> that exist in the industry.</p>
+
+                </section>
+
+                <div class="figure-col">
+                    <figure>
+                        <a href="img/logical-entity-relationship-diagram.png"><img src="img/logical-entity-relationship-diagram.png" alt="final logical entity relationship diagram" /></a>
+                        <figcaption>The final logical entity relationship diagram. The underlined attributes signify the primary key for the entity i.e. the attribute that uniquely identifies 
+                            each record. The acronym ‘fk’ refers to a foreign key. This is required to enable the entities to relate to each other.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="img/physical-entity-relationship-diagram-in-mysql.png"><img src="img/physical-entity-relationship-diagram-in-mysql.png" alt="physical entity relationship diagram in MySQL" /></a>
+                        <figcaption>MySQL physical entity relationship diagram.</figcaption>
+                    </figure>
+                    
+                    <figure>
+                        <a href="img/front-end-navigation-map.png"><img src="img/front-end-navigation-map.png" alt="front end navigation map" /></a>
+                        <figcaption>Front end navigation map.</figcaption>
+                    </figure>
+                    
+                    <figure>
+                        <a href="img/sql-server-asp_net-home-page.png"><img src="img/sql-server-asp_net-home-page.png" alt="sql server/asp.net home page" /></a>
+                        <figcaption>SQL Server/ASP.Net home page.</figcaption>
+                    </figure>
+                </div>
+            </article>
+        </div>
+
+        <footer class="clear">
+            <address id="footer-social">
+                <p>Have a question about anything on this site? Contact me via:</p>
+                <ul id="footer-logos">
+                    <li><a href="mailto:poc275@gmail.com?Subject=Website%20Enquiry"><img src="img/envelope-icon.png" alt="contact me via e-mail" /></a></li>
+                    <li><a href="https://twitter.com/?status=@poc275"><img src="img/twitter-logo.png" alt="contact me via twitter" /></a></li>
+                    <li><a href="http://stackoverflow.com/users/1929718/poc275"><img src="img/so-icon.png" alt="look me up on stack overflow" /></a></li>
+                </ul>
+            </address>
+            <div id="footer-misc" role="contentinfo">
+                <p>Page last updated on <time datetime="2014-10-17">October 17th, 2014</time></p>
+            </div>
+        </footer>
+
+    </body>
+</html>

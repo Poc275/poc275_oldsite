@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="a text analysis program that assesses the usefulness of various data structures and algorithms" />
+        <title>Text Analyser</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/main-styles.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+
+        <header class="alt-intro" role="banner">
+            <article class="story" id="intro">
+                <section>
+                    <div id="mugshot"></div>
+                    <h1><a href="index.html">Peter O&apos;Connor</a></h1>
+                    <p id="sub-heading">A Programmer's Portfolio</p>
+                </section>
+            </article>
+        </header>
+
+        <div role="main">
+            <article class="story" id="first">
+                <section class="content-col">
+
+                    <h2 class="space">Text analysis application</h2>
+
+                    <p class="space">The application is a primitive text analysis tool that aims to help with authorship attribution, which is the process applied to documents to try 
+                        and identify their authors. The idea being it can help identify forgeries and help identify genuine authors of unknown works. This computer based analysis 
+                        being just one tool in this process.</p>
+
+                    <p class="space">The application reads an input .txt file and produces an intermediate file which has one word per line with all punctuation removed. This intermediate 
+                        file can then be used for further analysis.</p>
+
+                    <p class="space">The application was then extended to read the intermediate file and calculate the frequency distribution of distinct words. The analysis report 
+                        had to print the words in order of frequency, with words which occur an equal number of times being displayed in alphabetical order. Other rudimentary statistics 
+                        were also calculated including the total number of words, the total number of distinct words, and the total number of unique words.</p>
+
+                    <p class="space">Various data structures were researched to accomplish this. The final choice being a binary search tree. This is a tree with a data item and two pointers 
+                        to other nodes in the tree, the left and right. Every value in the left sub-tree of a node is smaller than the value of that node, every value in the right sub-tree 
+                        is greater than (or equal to) it. The beauty of this data structure is that it sorts unsorted data as it is entered.</p>
+
+                    <p class="space">The intermediate file was read into the tree which contained the actual word along with its count (achieved through the use of a struct). The tree can 
+                        then be crawled to see if the word already exists, if it does, the count is incremented. If it isn’t, a new node is created for that word with a count of one. This 
+                        data structure provided the flexibility required as it enabled the analysis to report by word frequency or alphabetically. The algorithm to create/crawl/search 
+                        the tree utilised recursion:</p>
+
+                    <pre class="prettyprint">
+                        <code>
+Node* addNode(Node* tree, Node* toAdd)
+{
+	if (tree == 0)
+	{
+		return toAdd;
+	}
+	else
+	{
+		if (toAdd->wordCount->word < tree->wordCount->word)
+		{
+			tree->pLeft = addNode(tree->pLeft, toAdd);
+			return tree;
+		}
+		else if (toAdd->wordCount->word == tree->wordCount->word)
+		{
+			tree->wordCount->frequency++;
+			return tree;
+		}
+		else
+		{
+			tree->pRight = addNode(tree->pRight, toAdd);
+			return tree;
+		}
+	}
+}
+                        </code>
+                    </pre>
+
+                    <p class="space">The analysis of the algorithm highlighted that an evenly balanced tree search effort is <var>O(log N)</var> and insertion effort is <var>O(N log N)</var>. In a worst 
+                        case uneven tree this degenerates into <var>O(N<sup>2</sup>)</var> for insertion and <var>O(N)</var> for search, which is the same as a linked list.</p>
+
+                </section>
+
+                <div class="figure-col">
+                    <figure>
+                        <a href="img/shakespeare-text-analysis.png"><img src="img/shakespeare-text-analysis.png" alt="shakespeare's Macbeth text statistics" /></a>
+                        <figcaption>Text analysis results of Shakespeare's Macbeth.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="img/shakespeare-word-frequencies.png"><img src="img/shakespeare-word-frequencies.png" alt="shakespeare word frequency analysis" /></a>
+                        <figcaption>Shakespeare word frequency analysis.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="img/government-document-text-analysis.png"><img src="img/government-document-text-analysis.png" alt="a government document word frequency analysis" /></a>
+                        <figcaption>A government document word frequency analysis. Although only primitive analysis is carried out by this application, it is clear when compared
+                            with the Shakepseare analysis which one is using plainer English!
+                        </figcaption>
+                    </figure>
+                </div>
+            </article>
+        </div>
+
+        <footer class="clear">
+            <address id="footer-social">
+                <p>Have a question about anything on this site? Contact me via:</p>
+                <ul id="footer-logos">
+                    <li><a href="mailto:poc275@gmail.com?Subject=Website%20Enquiry"><img src="img/envelope-icon.png" alt="contact me via e-mail" /></a></li>
+                    <li><a href="https://twitter.com/?status=@poc275"><img src="img/twitter-logo.png" alt="contact me via twitter" /></a></li>
+                    <li><a href="http://stackoverflow.com/users/1929718/poc275"><img src="img/so-icon.png" alt="look me up on stack overflow" /></a></li>
+                </ul>
+            </address>
+            <div id="footer-misc" role="contentinfo">
+                <p>Page last updated on <time datetime="2014-10-11">October 11th, 2014</time></p>
+            </div>
+        </footer>
+
+
+        <!-- Javascript code prettifier lib -->
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=cpp"></script>
+
+    </body>
+</html>

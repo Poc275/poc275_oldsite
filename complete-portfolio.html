@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="A complete portfolio of my programming work" />
+        <title>Peter O&apos;Connor complete portfolio</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/main-styles.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body onload="init()">
+        <header class="alt-intro" role="banner">
+            <article class="story" id="intro">
+                <section>
+                    <div id="mugshot"></div>
+                    <h1><a href="index.html">Peter O&apos;Connor</a></h1>
+                    <p id="sub-heading">A Programmer's Portfolio</p>
+                </section>
+            </article>
+        </header>
+
+        <div id="toolbar">
+            <nav role="navigation">
+                <p>Filter by:</p>
+		        <ul id="filters">
+			        <li><a href="#" id="C#" onclick="filterLinkClicked('C#')">C#</a></li>
+			        <li><a href="#" id="C/C++" onclick="filterLinkClicked('C/C++')">C/C++</a></li>
+			        <li><a href="#" id="Java" onclick="filterLinkClicked('Java')">Java</a></li>
+			        <li><a href="#" id="Web" onclick="filterLinkClicked('Web')">Web</a></li>
+			        <li><a href="#" id="Other" onclick="filterLinkClicked('Other')">Other</a></li>
+		        </ul>
+		    </nav>
+
+            <div id="search" role="search">
+                <!-- possible search bar -->
+            </div>
+        </div>
+
+        <div id="main" role="main">
+            <article data-lang="Java">
+                <figure>
+                    <a href="code-master-android.html" class="no-border">
+                        <img src="img/code-master-android-app.png" alt="code master android app" />
+                    </a>
+                </figure>
+                <h2>Code Master</h2>
+                <p>This application was part of a Mobile Devices module. We began by looking at Java ME for an appreciation, but with the ubiquity of smartphones, it 
+                    made more sense to look at a more popular platform. Android was chosen as it could also be coded using Java.</p>
+                <div class="more">
+                    <a href="code-master-android.html" class="link-right">More...</a>
+                </div>
+            </article>
+
+            <article data-lang="Web">
+                <figure>
+                    <a href="usa-canada/usa-canada-trip.html" class="no-border">
+                        <img src="img/usa-canada-trip-homepage.png" alt="homepage of the usa/canada trip commemoration site" />
+                    </a>
+                </figure>
+                <h2>Holiday commemoration site</h2>
+                <p><a href="usa-canada/usa-canada-trip.html">This is a site that records a trip I took in 2009 to the US and Canada</a>. The goal of this project was to use some of the 
+                    latest CSS3 and HTML5 features, with the ultimate aim of producing something that little bit different. As such it isn't responsive, and is best viewed in a modern browser.</p>
+            </article>
+
+            <article data-lang="C/C++">
+                <figure>
+                    <a href="ipc-itc-windows-api.html" class="no-border">
+                        <img src="img/interprocess-communication.png" alt="interprocess communication demonstrated between producer and consumer programs" />
+                    </a>
+                </figure>
+                <h2>Windows API programming</h2>
+                <p>This project was part of an operating systems module. The content was tailored heavily towards the theory of operating systems but there was chance to do 
+                    some actual programming using C and the Windows API.</p>
+                <div class="more">
+                    <a href="ipc-itc-windows-api.html" class="link-right">More...</a>
+                </div>
+            </article>
+
+            <article data-lang="C#">
+                <figure>
+                    <a href="information-tracker.html" class="no-border">
+                        <img src="img/information-tracker-app.png" alt="information tracker application screenshot" />
+                    </a>
+                </figure>
+                <h2>Information tracker</h2>
+                <p>The goal of this project was to provide experience of working with code written by other people. Very rarely, if ever, will you start a new project from 
+                    scratch. An interface was provided for an information booking app that was then extended.</p>
+                <div class="more">
+                    <a href="information-tracker.html" class="link-right">More...</a>
+                </div>
+            </article>
+
+            <article data-lang="Web">
+                <figure>
+                    <a href="website-redesign-report.html" class="no-border">
+                        <img src="img/extra-packaging-website-redesign.png" alt="website redesign company logo" />
+                    </a>
+                </figure>
+                <h2>Website redesign &amp; report</h2>
+                <p>This project was focused on client-side web development, involving HTML, CSS and JavaScript. It involved re-designing a local packaging company’s website 
+                    and <a href="downloads/extra-packaging-website-report.pdf">writing a report, detailing how the re-design improved upon the original.</a></p>
+                <div class="more">
+                    <a href="website-redesign-report.html" class="link-right">More...</a>
+                </div>
+            </article>
+
+            <article data-lang="Other">
+                <figure>
+                    <a href="programming-language-design.html" class="no-border">
+                        <img src="img/frooble-grammar-tree.png" alt="grammar tree for the syntax design of Frooble" />
+                    </a>
+                </figure>
+                <h2>Language design &amp; implementation</h2>
+                <p>As part of a module that studied the design and implementation of programming languages I had to design and implement my own programming language.</p>
+                <div class="more">
+                    <a href="programming-language-design.html" class="link-right">More...</a>
+                </div>
+            </article>
+
+            <article data-lang="C#">
+                <figure>
+                    <a href="swimming-pool-bookings-system.html" class="no-border">
+                        <img src="img/bookings-timetable-app.png" alt="booking and timetable application main menu" />
+                    </a>
+                </figure>
+                <h2>Booking &amp; timetable application</h2>
+                <p>The project brief was to design and implement a membership bookings system for a swimming baths. The aim being to encourage more thought into the 
+                    design of an application.</p>
+                <div class="more">
+                    <a href="swimming-pool-bookings-system.html" class="link-right">More...</a>
+                </div>
+            </article>
+
+            <article data-lang="C/C++">
+                <figure>
+                    <a href="text-analyser.html" class="no-border">
+                        <img src="img/text-analyser.png" alt="text analyser screenshot showing text statistics from Shakespeare's Macbeth" />
+                    </a>
+                </figure>
+                <h2>Text analyser</h2>
+                <p>This project was part of a module studying algorithms and data structures. Various data structures were studied and algorithms to process the structures 
+                    were developed with Big ‘O’ notation being used to evaluate their suitability.</p>
+                <div class="more">
+                    <a href="text-analyser.html" class="link-right">More...</a>
+                </div>
+            </article>
+
+            <article data-lang="Web">
+                <figure>
+                    <a href="classified-adverts-web-app.html" class="no-border">
+                        <img src="img/classified-adverts-web-app-home-page-thumb.png" alt="home page of the classified adverts web application" />
+                    </a>
+                </figure>
+                <h2>Classified adverts web app</h2>
+                <p>As part of a module studying server side programming, a classified advertisements site was created using PHP and MySQL.</p>
+                <div class="more">
+                    <a href="classified-adverts-web-app.html" class="link-right">More...</a>
+                </div>
+            </article>
+
+            <article data-lang="Java">
+                <figure>
+                    <a href="distributed-application-development.html" class="no-border">
+                        <img src="img/distributed-application-use-case-diagram-thumb.png" alt="use case diagram of the 'bookface' distributed application" />
+                    </a>
+                </figure>
+                <h2>Distributed application development</h2>
+                <p>To gain an understanding of distributed systems, a group of us created a Facebook-like application using Google’s <abbr title="Platform as a service">PaaS</abbr> – App Engine.</p>
+                <div class="more">
+                    <a href="distributed-application-development.html" class="link-right">More...</a>
+                </div>
+            </article>
+
+            <article data-lang="C#">
+                <figure>
+                    <a href="music-collection-manager-pair-programming.html" class="no-border">
+                        <img src="img/music-collection-manager.png" alt="music collection manager application home screen" />
+                    </a>
+                </figure>
+                <h2>Music collection manager</h2>
+                <p>A music collection application was created utilising modern software development process to provide an insight into real world programming.</p>
+                <div class="more">
+                    <a href="music-collection-manager-pair-programming.html" class="link-right">More...</a>
+                </div>
+            </article>
+
+            <article data-lang="Web">
+                <figure>
+                    <img src="img/seo-report-for-better-propaganda.png" alt="low google search ranking for betterpropaganda.com that the report aims to rectify" />
+                </figure>
+                <h2>SEO report</h2>
+                <p>This is a short <a href="downloads/better-propaganda-seo-report.pdf">search engine optimisation (SEO) report</a> that takes one of my favourite websites 
+                    <a href="http://betterpropaganda.com/">betterPropaganda.com</a> and tries to look at ways of improving its search engine ranking.</p>
+            </article>
+
+            <article data-lang="Web">
+                <figure>
+                    <a href="multi-user-database-system.html" class="no-border">
+                        <img src="img/spikes-shoes-front-end-asp-thumb.png" alt="shoe store home page asp.net version" />
+                    </a>
+                </figure>
+                <h2>Database design</h2>
+                <p>The aim of this project was to design a multi-user database system for an online shoe store.</p>
+                <div class="more">
+                    <a href="multi-user-database-system.html" class="link-right">More...</a>
+                </div>
+            </article>
+
+            <article data-lang="Other">
+                <figure>
+                    <img src="img/nodes-of-yesod-xna.png" alt="screenshot of demo version of nodes of yesod written using xna" />
+                </figure>
+                <h2>Nodes of Yesod</h2>
+                <p>This is a joint project between <a href="http://anzax.co.uk/">Ian Wigley</a> and myself that is currently in progress. It is an XNA remake of the old 2D platform game Nodes of Yesod.</p>
+            </article>
+
+            <article data-lang="Web">
+                <figure>
+                    <a href="verb-test.php" class="no-border">
+                        <img src="img/italian-verb-test.png" alt="italian verb test screenshot" />
+                    </a>
+                </figure>
+                <h2>Italian Verbs Test</h2>
+                <p>This is a small, simple PHP web app that was created to help me practice Italian verb conjugations.</p>
+            </article>
+
+        </div>
+
+
+        <footer class="clear">
+            <address id="footer-social">
+                <p>Have a question about anything on this site? Contact me via:</p>
+                <ul id="footer-logos">
+                    <li><a href="mailto:poc275@gmail.com?Subject=Website%20Enquiry"><img src="img/envelope-icon.png" alt="contact me via e-mail" /></a></li>
+                    <li><a href="https://twitter.com/?status=@poc275"><img src="img/twitter-logo.png" alt="contact me via twitter" /></a></li>
+                    <li><a href="http://stackoverflow.com/users/1929718/poc275"><img src="img/so-icon.png" alt="look me up on stack overflow" /></a></li>
+                </ul>
+            </address>
+            <div id="footer-misc" role="contentinfo">
+                <p>Page last updated on <time datetime="2014-11-15">November 15th, 2014</time></p>
+            </div>
+        </footer>
+
+        <!-- scripts concatenated and minified via build script -->
+            <script src="js/plugins.js"></script>
+            <script src="js/script.js"></script>
+        <!-- end scripts -->
+
+    </body>
+</html>

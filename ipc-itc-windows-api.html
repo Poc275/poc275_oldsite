@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="A comparison between inter-thread communication and inter-process communication using the Windows API" />
+        <title>Windows API inter-thread versus inter-process communication</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/main-styles.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+
+        <header class="alt-intro" role="banner">
+            <article class="story" id="intro">
+                <section>
+                    <div id="mugshot"></div>
+                    <h1><a href="index.html">Peter O&apos;Connor</a></h1>
+                    <p id="sub-heading">A Programmer's Portfolio</p>
+                </section>
+            </article>
+        </header>
+
+        <div role="main">
+            <article class="story" id="first">
+                <section class="content-col">
+
+                    <h2 class="space">Comparison of communication between threads and processes using the Windows API</h2>
+
+                    <p class="space">The idea of this particular application was to try and prove some of the theory that had been taught in an operating systems module, specifically, the timing differences between 
+                        <abbr title="inter-process communication">IPC</abbr> and <abbr title="inter-thread communication">ITC</abbr>. The theory being that threads are quicker 
+                        to create than processes. However, does this remain true when communicating between threads and processes?</p>
+
+                    <p class="space">Communication was achieved through the use of events. For IPC, a pair of programs were created, one acting as a producer and the other 
+                        as a consumer. The producer program creates an event and stores the current ‘time’ which is retrieved from the performance counter. The consumer program then responds
+                        to the event, and reads the performance counter to be able to calculate the duration.</p>
+
+                    <p>For the consumer to be able to read the producer's starting time, a memory mapped file was created to enable both processes to communicate:</p>
+
+                    <pre class="prettyprint">
+                        <code>
+    // Memory sharing struct
+    typedef struct
+    {
+        LARGE_INTEGER startTime;
+    } MemShare;
+
+    // Create Shared Memory
+    hMapFile = CreateFileMapping((HANDLE)0xFFFFFFFF,
+                                        NULL, 
+                                        PAGE_READWRITE, 
+                                        0, 
+                                        sizeof(MemShare), 
+                                        L"MyFileMappingObject");
+
+    // Access shared memory (cast to the struct)
+    memShare = (MemShare*)MapViewOfFile(hMapFile,
+                                        FILE_MAP_READ | FILE_MAP_WRITE,
+                                        0,
+                                        0,
+                                        sizeof(MemShare));
+
+    // Place start counter in shared memory
+    CopyMemory((MemShare*)memShare, &start, sizeof(MemShare));
+                        </code>
+                    </pre>
+
+                    <p>The consumer program can then read the shared memory and calculate the time taken to respond to the event:</p>
+
+                    <pre class="prettyprint">
+                        <code>
+    // Wait for event to be signaled
+    WaitForSingleObject(passedParams->hEvent, INFINITE);
+
+    // Get end/freq values as soon as event has been signaled
+    QueryPerformanceCounter(&end);
+    QueryPerformanceFrequency(&freq);
+
+    // Open shared memory so we can get the start time
+    hMapFile = OpenFileMapping(FILE_MAP_READ | FILE_MAP_WRITE,
+                                FALSE,
+                                L"MyFileMappingObject");
+
+    // Access shared memory and calculate duration
+    memShare = (MemShare*)MapViewOfFile(hMapFile,
+                                        FILE_MAP_READ | FILE_MAP_WRITE,
+                                        0,
+                                        0,
+                                        sizeof(MemShare));
+
+    time = (double)(end.QuadPart - memShare->startTime.QuadPart) / (double)freq.QuadPart;
+                        </code>
+                    </pre>
+
+                    <p class="space">The ITC testing was done in exactly the same way, although this could be confined to a single program.</p>
+
+                    <p class="space">The results were surprising, IPC was quicker than ITC, but only slightly. One possible explanation is that the method of IPC 
+                        implemented (shared memory) is in fact the fastest form of IPC. This is because it doesn’t involve any 3rd party function calls, so there is no overhead associated, 
+                        as opposed to other IPC techniques.</p>
+                        
+                    <p class="space">Although this wasn’t my first taste of C programming, it 
+                        was my first attempt at programming for Windows. This proved to be very different from other programming I had done up to this point. The Windows API uses a lot of 
+                        structs, very long method calls and special data types. For anyone dabbling in such sorcery I highly recommend 
+                        <a href="http://www.amazon.co.uk/Programming-Windows%C2%AE-Microsoft-Series/dp/157231995X/ref=sr_1_2?ie=UTF8&qid=1411315058&sr=8-2&keywords=programming+windows">
+                        ‘Programming Windows’ (5th edition) by Charles Petzold</a>, a.k.a. The Bible!</p>
+            </section>
+
+            <div class="figure-col">
+                <figure id="mod-shadow">
+                    <a href="img/interprocess-communication.png"><img src="img/interprocess-communication.png" alt="ipc-producer-consumer-screenshot" /></a>
+                    <figcaption>IPC screenshot showing producer and consumer programs.</figcaption>
+                </figure>
+
+                <figure>
+                    <a href="img/ipc-vs-itc-timings-chart.png"><img src="img/ipc-vs-itc-timings-chart.png" alt="ipc-vs-itc-timings-graph" /></a>
+                    <figcaption>Overall timing results, the mean shows IPC is surprisingly slightly faster than ITC.</figcaption>
+                </figure>
+            </div>
+        </article>
+
+        </div>
+
+
+        <footer class="clear">
+            <address id="footer-social">
+                <p>Have a question about anything on this site? Contact me via:</p>
+                <ul id="footer-logos">
+                    <li><a href="mailto:poc275@gmail.com?Subject=Website%20Enquiry"><img src="img/envelope-icon.png" alt="contact me via e-mail" /></a></li>
+                    <li><a href="https://twitter.com/?status=@poc275"><img src="img/twitter-logo.png" alt="contact me via twitter" /></a></li>
+                    <li><a href="http://stackoverflow.com/users/1929718/poc275"><img src="img/so-icon.png" alt="look me up on stack overflow" /></a></li>
+                </ul>
+            </address>
+            <div id="footer-misc" role="contentinfo">
+                <p>Page last updated on <time datetime="2014-10-05">October 5th, 2014</time></p>
+            </div>
+        </footer>
+
+
+        <!-- Javascript code prettifier lib -->
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=c"></script>
+
+    </body>
+</html>
