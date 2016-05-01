@@ -51,5 +51,10 @@ button {
 }
 
 canvas {
-    margin-top: 50px;
+    margin: 30px auto;
+    display: block;
+}
+
+#new-game-button {
+    float: right;
 }

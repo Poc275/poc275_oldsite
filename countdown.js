@@ -1,30 +1,30 @@
-// letter distributions as per scrabble
-var vowels = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 
-                'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 
-                'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I',
-                'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O',
-                'U', 'U', 'U', 'U'];
+// normalised letter distributions - http://www.thecountdownpage.com/letters.htm
+var vowels = ['A', 'A', 'A', 
+                'E', 'E', 'E', 'E', 
+                'I', 'I', 'I',
+                'O', 'O', 'O',
+                'U'];
 
 var consonants = ['B', 'B',
-                    'C', 'C',
-                    'D', 'D', 'D', 'D',
+                    'C', 'C', 'C',
+                    'D', 'D', 'D', 'D', 'D', 'D',
                     'F', 'F',
                     'G', 'G', 'G',
                     'H', 'H',
                     'J', 
                     'K', 
-                    'L', 'L', 'L', 'L',
-                    'M', 'M',
-                    'N', 'N', 'N', 'N', 'N', 'N',
-                    'P', 'P',
+                    'L', 'L', 'L', 'L', 'L',
+                    'M', 'M', 'M', 'M',
+                    'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N',
+                    'P', 'P', 'P', 'P',
                     'Q', 
-                    'R', 'R', 'R', 'R', 'R', 'R',
-                    'S', 'S', 'S', 'S',
-                    'T', 'T', 'T', 'T', 'T', 'T',
-                    'V', 'V',
-                    'W', 'W',
+                    'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
+                    'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S',
+                    'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T',
+                    'V',
+                    'W',
                     'X', 
-                    'Y', 'Y',
+                    'Y',
                     'Z'];
 
 var letters = "";
@@ -83,7 +83,7 @@ function getContents() {
         if (httpRequest.readyState === 4) {
             if (httpRequest.status === 200) {
                 var contents = httpRequest.responseText;
-                wordList = contents.split('\r\n');
+                wordList = contents.split(/\r\n|\r|\n/g);
                 buildAssociativeArray();
             } else {
                 alert("There was a problem with the request");
@@ -101,6 +101,45 @@ function buildAssociativeArray() {
         var word = wordList[i];
         associativeWordList[word] = word;
     }
+}
+
+
+function newGameButtonClick() {
+    // re-enable buttons
+    var buttons = document.getElementsByClassName('letter-buttons');
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = false;
+    }
+
+    // reset clock
+    clearInterval(clockTimerId);
+    timer = 30;
+
+    canvasContext.clearRect(0, 0, 250, 250);
+    canvasContext.beginPath();
+    canvasContext.moveTo(125, 125);
+    canvasContext.lineTo(125, 10);
+    canvasContext.stroke();
+
+    // clear game/board tiles
+    for (var i = 0; i < cells.length; i++) {
+        cells[i].textContent = '';
+        cells[i].style.backgroundColor = "#c0c0c0";
+    }
+
+    var playerCells = document.getElementsByClassName('playerTile');
+    for (var i = 0; i < playerCells.length; i++) {
+        playerCells[i].textContent = '';
+        playerCells[i].style.backgroundColor = "#c0c0c0";
+    }
+
+    // reset pick and letters
+    pick = 0;
+    letters = "";
+
+    // reset and hide results
+    resultsPara.innerHTML = "";
+    resultsPara.style.visibility = 'hidden';
 }
 
 
@@ -153,6 +192,7 @@ function initialise() {
         }
     } else {
         // TODO - need a library backup
+        alert("This browser doesn't support drag and drop, functionality will therefore be limited");
     }
 
     // initialise canvas
@@ -216,8 +256,7 @@ function getRandomNumber(type) {
 
 function startGame() {
     // disable the buttons and start the clock
-    var buttons = document.getElementsByTagName('button');
-
+    var buttons = document.getElementsByClassName('letter-buttons');
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].disabled = true;
     }
@@ -227,21 +266,32 @@ function startGame() {
     // find possible words from the letters - on a new thread
     if (!!window.Worker) {
         var wordFinderWorker = new Worker("wordFinder.js");
-        wordFinderWorker.postMessage([letters, associativeWordList]);
+        var workerData = {
+            board: letters,
+            words: associativeWordList
+        };
+        wordFinderWorker.postMessage(workerData);
 
         wordFinderWorker.onmessage = function (e) {
-            document.getElementById("nResults").innerHTML = "Complete!";
             var computerWords = e.data;
-            resultsPara.innerHTML = computerWords.length + " words found<br />";
 
-            // sort by length
-            computerWords.sort(function (a, b) {
-                return b.length - a.length;
-            });
+            if (computerWords.length > 0) {
+                resultsPara.innerHTML = "The computer found " + computerWords.length + " words<br />The longest word/s were:<br />";
 
-            for (var i = 0; i < computerWords.length; i++) {
-                resultsPara.innerHTML += computerWords[i];
-                resultsPara.innerHTML += "<br />";
+                // sort by length
+                computerWords.sort(function (a, b) {
+                    return b.length - a.length;
+                });
+
+                // show longest word/s
+                var i = 0;
+                while (computerWords[i].length === computerWords[0].length) {
+                    resultsPara.innerHTML += computerWords[i];
+                    resultsPara.innerHTML += "<br />";
+                    i++;
+                }
+            } else {
+                resultsPara.innerHTML = "The computer didn't find any words";
             }
         }
     } else {

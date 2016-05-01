@@ -421,7 +421,7 @@ Options -MultiViews
 # ----------------------------------------------------------------------
 
 # You can add custom pages to handle 500 or 403 pretty easily, if you like.
-ErrorDocument 404 /countdown/countdown.html
+ErrorDocument 404 /countdown.html
 
 
 

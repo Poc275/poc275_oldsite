@@ -3,7 +3,7 @@
 <html lang="en" class="no-js">
     <head>
         <meta charset="utf-8" />
-        <title>Countdown Letters Game</title>
+        <title>404 - Page not found aka Countdown Letters Game</title>
 
         <link rel="stylesheet" href="../css/reset.css">
         <link rel="stylesheet" href="../css/style.css">
@@ -23,9 +23,7 @@
             </h2>
             <h3>In the meantime have a quick letters game before you go back</h3>
 
-            <canvas id="clock" width="250" height="250">
-                
-            </canvas>
+            <canvas id="clock" width="250" height="250"></canvas>
 
             <table>
                 <tr id="board">
@@ -57,10 +55,10 @@
                 </tr>
             </table>
 
-            <button onclick="vowelButtonClick()">Vowel</button>
-            <button onclick="consonantButtonClick()">Consonant</button>
+            <button onclick="vowelButtonClick()" class="letter-buttons">Vowel</button>
+            <button onclick="consonantButtonClick()" class="letter-buttons">Consonant</button>
+            <button onclick="newGameButtonClick()" id="new-game-button">New Game</button>
 
-            <p id="nResults"></p>
             <p id="results"></p>
 
         </div>
